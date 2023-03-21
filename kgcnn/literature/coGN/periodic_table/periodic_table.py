@@ -1,17 +1,17 @@
 import pandas as pd
 from typing import Optional
 import importlib.resources
-import kgcnn.literature.coGN.periodic_table
+import kgcnn.literature.coGN.periodic_table as periodic_table_module
 
 # CSV file is downloaded from:
 # https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV/?response_type=save&response_basename=PubChemElements_all
 
 try:
     # >= Python 3.9
-    periodic_table_csv = importlib.resources.files(kgcnn.literature.coGN.periodic_table) / 'periodic_table.csv'
+    periodic_table_csv = importlib.resources.files(periodic_table_module) / 'periodic_table.csv'
 except:
     # < Python 3.9
-    with importlib.resources.path(kgcnn.literature.coGN.periodic_table, 'periodic_table.csv') as file_name:
+    with importlib.resources.path(periodic_table_module, 'periodic_table.csv') as file_name:
         periodic_table_csv = file_name
 
 

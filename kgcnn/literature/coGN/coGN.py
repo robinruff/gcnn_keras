@@ -14,7 +14,7 @@ from copy import deepcopy
 import kgcnn.literature.coGN.coGN_config as coGN_config
 import kgcnn.literature.coGN.coNGN_config as coNGN_config
 
-def get_model(input_block_cfg = coGN_config.input_block_cfg,
+def make_model(input_block_cfg = coGN_config.input_block_cfg,
               processing_blocks_cfgs = coGN_config.depth * [coGN_config.processing_block_cfg],
               output_block_cfg = coGN_config.output_block_cfg,
               multiplicity=True, line_graph=False, voronoi_ridge_area=False):
